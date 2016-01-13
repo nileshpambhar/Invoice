@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/ten_dp"
+                android:text="Tell us a bit about your business to help guide future app improvements!"
+                android:textSize="@dimen/text_16" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:layout_marginRight="@dimen/ten_dp"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/spinWhatInvoiceFor"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     />
+
+                <Spinner
+                    android:id="@+id/spinWhoDo_U_Invoice"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     />
+
+                <Spinner
+                    android:id="@+id/spinRepeatBuz"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     />
+
+                <Spinner
+                    android:id="@+id/spinExp_Per_Job"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     />
+
+                <Spinner
+                    android:id="@+id/spinInvoicePerMonth"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     />
+
+                <Spinner
+                    android:id="@+id/spinYearsInBuz"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     />
+
+                <Spinner
+                    android:id="@+id/spinBuz_revenue"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     />
+
+                <Spinner
+                    android:id="@+id/spinPreferInvoice"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Comments"
+                    android:lines="4"
+                    android:maxLines="4" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

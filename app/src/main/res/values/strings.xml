@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">InvoiceApp</string>
     <string name="action_settings">Settings</string>
+    <string name="skip">SKIP</string>
+    <string name="previous">PREVIOUS</string>
+    <string name="next">NEXT</string>
+    <string name="finish">FINISH</string>
+    <string name="what_do_you_invoice_for">What do you invoice for?</string>
 </resources>
