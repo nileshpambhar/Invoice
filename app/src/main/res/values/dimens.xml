@@ -22,4 +22,5 @@
     <dimen name="text_20">20dp</dimen>
     <dimen name="text_24">24dp</dimen>
     <dimen name="text_32">32dp</dimen>
+
 </resources>
