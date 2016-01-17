@@ -6,5 +6,10 @@
     <string name="next">NEXT</string>
     <string name="finish">FINISH</string>
     <string name="what_do_you_invoice_for">What do you invoice for?</string>
+    <string name="title_activity_invoice">InvoiceActivity</string>
+    <string name="title_activity_invoice_activity_main">Invoices</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package app.invoice.com.invoiceapp;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -7,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import com.viewpagerindicator.CirclePageIndicator;
@@ -39,6 +41,34 @@ public class SplashActivity extends AppCompatActivity {
         btnNext=(Button)findViewById(R.id.btnNext);
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         indicator.setViewPager(pager);
+
+
+        btnSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent sender = new Intent(SplashActivity.this, InvoiceActivity.class);
+                startActivity(sender);
+                finish();
+
+            }
+        });
+
+
+        pager.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+
+
+
+            @Override
+            public void onScrollChange(View view, int i, int i1, int i2, int i3) {
+
+
+                Log.d("page position" , ""+i);Log.d("page position" , ""+i1);Log.d("page position" , ""+i2);Log.d("page position" , ""+i3);
+
+
+            }
+        });
+
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter
