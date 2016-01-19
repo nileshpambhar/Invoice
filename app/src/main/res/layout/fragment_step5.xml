@@ -18,29 +18,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome! lets take a few seconds to get a few of the basic setup\n\nTap next at any time,you can easily change this information later, everything is optional."
+        android:text="@string/onboarding_done"
         android:textSize="@dimen/text_18"
         android:padding="@dimen/ten_dp"/>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/thirty_dp"
-        android:layout_marginLeft="@dimen/ten_dp"
-        android:layout_marginRight="@dimen/ten_dp"
-        android:gravity="center_vertical">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.3"
-            android:text="Currency"
-            android:textSize="@dimen/text_18"
-            android:textColor="@color/black"/>
-        <Spinner
-            android:id="@+id/spinnerCurrency"
-            android:layout_width="0dp"
-            android:layout_weight="0.7"
-            android:layout_height="wrap_content">
-
-        </Spinner>
-    </LinearLayout>
 </LinearLayout>

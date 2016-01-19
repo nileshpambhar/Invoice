@@ -32,52 +32,78 @@
                 <Spinner
                     android:id="@+id/spinWhatInvoiceFor"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:prompt="@string/what_do_you_invoice_for"
+                    android:entries="@array/invoiceType"
+                    android:spinnerMode="dialog"
                      />
 
                 <Spinner
                     android:id="@+id/spinWhoDo_U_Invoice"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:entries="@array/invoiceWho"
+                    android:prompt="@string/who_do_you_invoice"
+                    android:spinnerMode="dialog"
                      />
+
 
                 <Spinner
                     android:id="@+id/spinRepeatBuz"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:entries="@array/repeat"
+                    android:prompt="@string/repeat_business"
+                    android:spinnerMode="dialog"
                      />
 
                 <Spinner
                     android:id="@+id/spinExp_Per_Job"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:entries="@array/expenses"
+                    android:prompt="@string/expense_per_job"
+                    android:spinnerMode="dialog"
                      />
 
                 <Spinner
                     android:id="@+id/spinInvoicePerMonth"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:entries="@array/invoicesPerMonth"
+                    android:prompt="@string/invoices_per_month"
+                    android:spinnerMode="dialog"
                      />
 
                 <Spinner
                     android:id="@+id/spinYearsInBuz"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:entries="@array/yearsInBusiness"
+                    android:prompt="@string/years_in_business"
+                    android:spinnerMode="dialog"
                      />
 
                 <Spinner
                     android:id="@+id/spinBuz_revenue"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:entries="@array/revenue"
+                    android:prompt="@string/business_revenue"
+                    android:spinnerMode="dialog"
                      />
 
                 <Spinner
                     android:id="@+id/spinPreferInvoice"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
+                    android:entries="@array/invoiceDesign"
+                    android:prompt="@string/preferred_invoice_design"
+                    android:spinnerMode="dialog"
                     />
 
                 <EditText
+                    android:id="@+id/editComment"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:hint="Comments"

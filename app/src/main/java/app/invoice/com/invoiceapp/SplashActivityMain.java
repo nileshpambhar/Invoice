@@ -22,7 +22,7 @@ public class SplashActivityMain extends AppCompatActivity {
 
         setContentView(R.layout.splash_activity_main);
 
-
+        getSupportActionBar().hide();
         new Handler().postDelayed(new Runnable() {
 
             /*

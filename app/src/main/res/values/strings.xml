@@ -11,5 +11,149 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    
+    <string name="who_do_you_invoice">Who do you invoice?</string>
+    <string name="repeat_business">Repeat Business</string>
+    <string name="expense_per_job">Expense per job or client</string>
+    <string name="invoices_per_month">Invoices per month</string>
+    <string name="years_in_business">Years in business</string>
+    <string name="business_revenue">Business Revenue</string>
+    <string name="preferred_invoice_design">Preferred invoice design/appearance</string>
+    <string name="onboarding_done">"You've got the basics setup now, go ahead and create your first invoice!"</string>
+    <string-array name="expenses">
+        <item>I charge for them on invoices</item>
+        <item>I build them into my prices</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="invoiceDesign">
+        <item>No frills</item>
+        <item>Creative</item>
+    </string-array>
+    <string-array name="invoiceType">
+        <item>Products that you sell</item>
+        <item>Labor and parts/materials</item>
+        <item>Services, projects or jobs that you perform</item>
+        <item>Rentals</item>
+    </string-array>
+    <string-array name="invoiceWho">
+        <item>Businesses</item>
+        <item>Individuals</item>
+        <item>Just one business or individual</item>
+    </string-array>
+    <string-array name="invoicesPerMonth">
+        <item>Less than 1</item>
+        <item>1 to 2</item>
+        <item>3 to 5</item>
+        <item>5 to 10</item>
+        <item>10 to 20</item>
+        <item>20 to 30</item>
+        <item>30 to 50</item>
+        <item>50 to 100</item>
+        <item>100+</item>
+    </string-array>
+    <string-array name="repeat">
+        <item>Mostly repeat customers</item>
+        <item>Mostly new customers</item>
+        <item>Just one customer</item>
+    </string-array>
+    <string-array name="revenue">
+        <item>USD $0-$10k/yr</item>
+        <item>USD $10k-$25k/yr</item>
+        <item>USD $25k-$50k/yr</item>
+        <item>USD $50k-$75k/yr</item>
+        <item>USD $75k-$100k/yr</item>
+        <item>USD $100k-$200k/yr</item>
+        <item>USD $200k-$500k/yr</item>
+        <item>USD $500k-$1m/yr</item>
+        <item>USD $1m+/yr</item>
+    </string-array>
+    <string-array name="yearsInBusiness">
+        <item>Just getting started</item>
+        <item>Less than 1 year</item>
+        <item>More than 1 year</item>
+        <item>More than 2 years</item>
+        <item>More than 3 years</item>
+        <item>More than 5 years</item>
+        <item>More than 10 years</item>
+    </string-array>
+    <string-array name="currency">
+        <item>USD($)</item>
+        <item>GBP(£)</item>
+        <item>AUD($)</item>
+        <item>CAD($)</item>
+        <item>EUR(€)</item>
+        <item>CNY(¥)</item>
+        <item>HKD($)</item>
+        <item>TWD($)</item>
+        <item>AED(Dhs)</item>
+        <item>ALL(Lek)</item>
+        <item>AOA(Kz)</item>
+        <item>ARS($)</item>
+        <item>BGN(лв)</item>
+        <item>BHD(.د.ب)</item>
+        <item>BRL(R$)</item>
+        <item>BOB(Bs)</item>
+        <item>BWP(P)</item>
+        <item>BZD(BZ$)</item>
+        <item>CFA(Fr)</item>
+        <item>CHF(CH₣)</item>
+        <item>CLP($)</item>
+        <item>COP(COL$)</item>
+        <item>CRC(₡)</item>
+        <item>CZK(Kč)</item>
+        <item>DKK(kr)</item>
+        <item>DOP(RD$)</item>
+        <item>EGP(E£)</item>
+        <item>GHS(GH₵)</item>
+        <item>GTQ(Q)</item>
+        <item>HRK(kn)</item>
+        <item>HUF(Ft)</item>
+        <item>IDR(Rp)</item>
+        <item>ILS(₪)</item>
+        <item>INR(₹)</item>
+        <item>JMD($)</item>
+        <item>JOD(JD)</item>
+        <item>JPY(¥)</item>
+        <item>KES(KSh)</item>
+        <item>KRW(W)</item>
+        <item>KWD(KD)</item>
+        <item>KZT(₸)</item>
+        <item>LKR(Rs)</item>
+        <item>MAD(د.م.)</item>
+        <item>MKD(ден)</item>
+        <item>MMK(K)</item>
+        <item>MXN($)</item>
+        <item>MYR(RM)</item>
+        <item>OMR(﷼)</item>
+        <item>NAD(N$)</item>
+        <item>NIO(C$)</item>
+        <item>NOK(kr)</item>
+        <item>NGN(N)</item>
+        <item>NZD($)</item>
+        <item>PEN(S/.)</item>
+        <item>PHP(₱)</item>
+        <item>PKR(₨)</item>
+        <item>PLN(zł)</item>
+        <item>PYG(₲)</item>
+        <item>RON(lei)</item>
+        <item>RUB(₽)</item>
+        <item>RWF(FRw)</item>
+        <item>SAR(﷼)</item>
+        <item>SEK(kr)</item>
+        <item>SGD($)</item>
+        <item>SLL(Le)</item>
+        <item>THB(฿)</item>
+        <item>TND(د.ت)</item>
+        <item>TRL(₤)</item>
+        <item>TRY(₺)</item>
+        <item>TTD(TT$)</item>
+        <item>TZS(TSh)</item>
+        <item>UGX(USh)</item>
+        <item>UAH(₴)</item>
+        <item>VND(₫)</item>
+        <item>ZAR(R)</item>
+        <item>VEF(Bs)</item>
+        <item>ZMW(ZMK)</item>
+    </string-array>
 
 </resources>

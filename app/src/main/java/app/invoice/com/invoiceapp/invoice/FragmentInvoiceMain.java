@@ -41,18 +41,10 @@ public class FragmentInvoiceMain extends Fragment
                 .findViewById(R.id.sliding_tabs);
         pagerAdapter = new SectionPagerAdapter(getFragmentManager());
         pager.setAdapter(pagerAdapter);
-        pager.setCurrentItem(0);
+       // pager.setCurrentItem(0);
         mSlidingTabLayout.setDistributeEvenly(true);
         mSlidingTabLayout.setViewPager(pager);
-        pager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 
-            @Override
-            public void onPageSelected(int position) {
-                // TODO Auto-generated method stub
-                super.onPageSelected(position);
-
-            }
-        });
     }
 
     class SectionPagerAdapter extends FragmentPagerAdapter{
