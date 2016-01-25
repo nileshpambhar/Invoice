@@ -3,10 +3,9 @@ package app.invoice.com.invoiceapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,35 +13,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import app.invoice.com.invoiceapp.invoice.FragmentInvoiceMain;
+import app.invoice.com.invoiceapp.fragment.FragmentInvoiceBillMain;
 
-public class InvoiceActivity extends AppCompatActivity
+
+public class InvoiceBillActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_invoice_main);
+        setContentView(R.layout.support_drawer_view_invoicebill);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        FragmentInvoiceMain fim = new FragmentInvoiceMain();
+        FragmentInvoiceBillMain fim = new FragmentInvoiceBillMain();
         FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().add(R.id.content_invoice_frame , fim).commit();
+        fm.beginTransaction().add(R.id.invoice_bill_frame, fim).commit();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-                Intent sender = new Intent(InvoiceActivity.this, InvoiceBillActivity.class);
-                startActivity(sender);
-            }
-        });
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -50,7 +42,7 @@ public class InvoiceActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_drawer);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -94,40 +86,6 @@ public class InvoiceActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-
-        switch (id) {
-
-            case R.id.nav_backup:
-                Intent senderBackup = new Intent(InvoiceActivity.this, BackUpActivity.class);
-                startActivity(senderBackup);
-                break;
-            case R.id.nav_view:
-                Intent senderMyItem = new Intent(InvoiceActivity.this, MyItemActivity.class);
-                startActivity(senderMyItem);
-                break;
-            case R.id.nav_support:
-                /*Intent senderSupport = new Intent(InvoiceActivity.this, SupportActivity.class);
-                startActivity(senderSupport);*/
-                break;
-            case R.id.nav_est:
-                Intent sender = new Intent(InvoiceActivity.this, EstimateActvity.class);
-                startActivity(sender);
-                break;
-            case R.id.nav_clients:
-                Intent intent=new Intent(InvoiceActivity.this,ClientListActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.nav_items:
-                Intent intentItem=new Intent(InvoiceActivity.this,AddItemActivity.class);
-                startActivity(intentItem);
-                break;
-            case R.id.nav_settings:
-                Intent senderSetting = new Intent(InvoiceActivity.this, SettngActvity.class);
-                startActivity(senderSetting);
-                break;
-
-
-        }
 
         drawer.closeDrawer(GravityCompat.START);
         return true;

@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">InvoiceApp</string>
     <string name="action_settings">Settings</string>
+    <string name="action_save">SAVE</string>
+    <string name="action_edit">EDIT</string>
+    <string name="action_delete">DELETE</string>
     <string name="skip">SKIP</string>
+
     <string name="previous">PREVIOUS</string>
     <string name="next">NEXT</string>
     <string name="finish">FINISH</string>
@@ -155,5 +159,48 @@
         <item>VEF(Bs)</item>
         <item>ZMW(ZMK)</item>
     </string-array>
+    <string name="title_activity_add_item">AddItemActivity</string>
+    <string name="setting_business">Business</string>
+    <string name="setting_logo">Logo</string>
+    <string name="setting_name">Name, address &amp; reg number </string>
+    <string name="setting_phone">Phone, email &amp; website </string>
+    <string name="setting_payment">Payment (Bank Transfer,PayPal etc)</string>
+    <string name="setting_invoice">Invoice</string>
+    <string name="setting_texas">Taxes</string>
+    <string name="setting_sendacopy">Send me a copy</string>
+    <string name="setting_defaultPaid">Default paid</string>
+    <string name="setting_defaultNote">Default notes</string>
+    <string name="setting_ToggleQuantity">Toggle quantity &amp; amount</string>
+    <string name="setting_Rename">Rename fields</string>
+    <string name="setting_send">SEND</string>
+    <string name="setting_sendsms">SMS app</string>
+    <string name="setting_sendemail">Email app</string>
+    <string name="setting_noti">Notification</string>
+    <string name="setting_invoiceopen">Invoice opened</string>
+    <string name="setting_failedtodeliver">Failed to deliver invoice</string>
+    <string name="setting_locale">Locale</string>
+    <string name="setting_currency">Currency</string>
+    <string name="setting_dateformat">Date format</string>
+    <string name="setting_language">Language</string>
+    <string name="setting_about">ABOUT</string>
+    <string name="setting_changelog">Change log</string>
+    <string name="setting_buy">Purchase full version</string>
 
+
+    <string name="bill_payment">TAKE PAYMENT</string>
+    <string name="bill_reciept">Due on reciept</string>
+    <string name="bill_default">INV0001</string>
+    <string name="bill_business_detail">Business name,detail logo</string>
+    <string name="bill_to">To</string>
+    <string name="bill_addItem">Add Item</string>
+    <string name="bill_subtotal">Subtotal</string>
+    <string name="bill_Discount">Discount</string>
+    <string name="bill_shipping">Shipping</string>
+    <string name="bill_text">Tax</string>
+    <string name="bill_total">Total</string>
+    <string name="bill_paid">Paid</string>
+    <string name="bill_balancedue">Balance Due</string>
+    <string name="bill_signature">Signature</string>
+    <string name="bill_Notes">Notes</string>
+    <string name="bill_addphoto">Add photo</string>
 </resources>

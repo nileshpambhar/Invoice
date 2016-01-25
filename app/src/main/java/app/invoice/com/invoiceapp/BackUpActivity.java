@@ -2,10 +2,6 @@ package app.invoice.com.invoiceapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentManager;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,35 +10,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-import app.invoice.com.invoiceapp.invoice.FragmentInvoiceMain;
-
-public class InvoiceActivity extends AppCompatActivity
+public class BackUpActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_invoice_main);
+        setContentView(R.layout.support_drawer_view_backup);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        FragmentInvoiceMain fim = new FragmentInvoiceMain();
-        FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().add(R.id.content_invoice_frame , fim).commit();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-                Intent sender = new Intent(InvoiceActivity.this, InvoiceBillActivity.class);
-                startActivity(sender);
-            }
-        });
+//        FragmentInvoiceMain fim = new FragmentInvoiceMain();
+//        FragmentManager fm = getSupportFragmentManager();
+//        fm.beginTransaction().add(R.id.content_invoice_frame, fim).addToBackStack(null).commit();
+//
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -50,7 +44,7 @@ public class InvoiceActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_drawer);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -98,37 +92,36 @@ public class InvoiceActivity extends AppCompatActivity
         switch (id) {
 
             case R.id.nav_backup:
-                Intent senderBackup = new Intent(InvoiceActivity.this, BackUpActivity.class);
+                Intent senderBackup = new Intent(BackUpActivity.this, BackUpActivity.class);
                 startActivity(senderBackup);
                 break;
             case R.id.nav_view:
-                Intent senderMyItem = new Intent(InvoiceActivity.this, MyItemActivity.class);
+                Intent senderMyItem = new Intent(BackUpActivity.this, MyItemActivity.class);
                 startActivity(senderMyItem);
                 break;
             case R.id.nav_support:
-                /*Intent senderSupport = new Intent(InvoiceActivity.this, SupportActivity.class);
+               /* Intent senderSupport = new Intent(BackUpActivity.this, SupportActivity.class);
                 startActivity(senderSupport);*/
                 break;
             case R.id.nav_est:
-                Intent sender = new Intent(InvoiceActivity.this, EstimateActvity.class);
+                Intent sender = new Intent(BackUpActivity.this, EstimateActvity.class);
                 startActivity(sender);
                 break;
             case R.id.nav_clients:
-                Intent intent=new Intent(InvoiceActivity.this,ClientListActivity.class);
-                startActivity(intent);
+                drawer.closeDrawer(GravityCompat.START);
                 break;
-            case R.id.nav_items:
-                Intent intentItem=new Intent(InvoiceActivity.this,AddItemActivity.class);
-                startActivity(intentItem);
+            case R.id.nav_cam:
+                drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_settings:
-                Intent senderSetting = new Intent(InvoiceActivity.this, SettngActvity.class);
+                Intent senderSetting = new Intent(BackUpActivity.this, SettngActvity.class);
                 startActivity(senderSetting);
                 break;
 
 
         }
 
+        Toast.makeText(BackUpActivity.this, "position :: " + id, Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
