@@ -39,10 +39,6 @@
             android:name=".BackUpActivity"
             ></activity>
 
-        <activity
-            android:name=".MyItemActivity"
-            ></activity>
-
 
         <activity
             android:name=".SettngActvity"
