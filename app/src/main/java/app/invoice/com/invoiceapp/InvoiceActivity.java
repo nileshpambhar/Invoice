@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,13 +15,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import app.invoice.com.invoiceapp.adapter.DrawerListAdapter;
 import app.invoice.com.invoiceapp.invoice.FragmentInvoiceMain;
 
 public class InvoiceActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+{
 
     DrawerLayout drawer;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +60,50 @@ public class InvoiceActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_drawer);
-        navigationView.setNavigationItemSelectedListener(this);
+        ListView navigationView = (ListView) findViewById(R.id.nav_drawer);
+        navigationView.setAdapter(new DrawerListAdapter(InvoiceActivity.this));
+        navigationView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                drawer.closeDrawer(GravityCompat.START);
+                if(position==0)
+                {
 
+                }
+                else if(position==1)
+                {
+                    Intent sender = new Intent(InvoiceActivity.this, EstimateActivity.class);
+                    startActivity(sender);
+                }
+                else if(position==2)
+                {
+                    Intent sender = new Intent(InvoiceActivity.this, ItemListActivity.class);
+                    startActivity(sender);
+                }
+                else if(position==3)
+                {
+                    Intent sender = new Intent(InvoiceActivity.this, ClientListActivity.class);
+                    startActivity(sender);
+                }
+                else if(position==4)
+                {
+                    Intent sender = new Intent(InvoiceActivity.this, BackUpActivity.class);
+                    startActivity(sender);
+                }
+                else if(position==5)
+                {
+
+                }
+                else if(position==6)
+                {
+                    Intent sender = new Intent(InvoiceActivity.this, SettngActvity.class);
+                    startActivity(sender);
+                }
+            }
+        });
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -88,48 +137,6 @@ public class InvoiceActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
 
-        switch (id) {
-
-            case R.id.nav_backup:
-                Intent senderBackup = new Intent(InvoiceActivity.this, BackUpActivity.class);
-                startActivity(senderBackup);
-                break;
-            case R.id.nav_view:
-                Intent senderMyItem = new Intent(InvoiceActivity.this, MyItemActivity.class);
-                startActivity(senderMyItem);
-                break;
-            case R.id.nav_support:
-                /*Intent senderSupport = new Intent(InvoiceActivity.this, SupportActivity.class);
-                startActivity(senderSupport);*/
-                break;
-            case R.id.nav_est:
-                Intent sender = new Intent(InvoiceActivity.this, EstimateActvity.class);
-                startActivity(sender);
-                break;
-            case R.id.nav_clients:
-                Intent intent=new Intent(InvoiceActivity.this,ClientListActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.nav_items:
-                Intent intentItem=new Intent(InvoiceActivity.this,AddItemActivity.class);
-                startActivity(intentItem);
-                break;
-            case R.id.nav_settings:
-                Intent senderSetting = new Intent(InvoiceActivity.this, SettngActvity.class);
-                startActivity(senderSetting);
-                break;
-
-
-        }
-
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

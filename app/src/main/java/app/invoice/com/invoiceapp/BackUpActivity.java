@@ -10,20 +10,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import app.invoice.com.invoiceapp.adapter.DrawerListAdapter;
+
 public class BackUpActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+         {
 
     DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.support_drawer_view_backup);
+        setContentView(R.layout.support_toobar_backup);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle("Backup");
 
 //        FragmentInvoiceMain fim = new FragmentInvoiceMain();
 //        FragmentManager fm = getSupportFragmentManager();
@@ -44,8 +49,34 @@ public class BackUpActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        ListView navigationView = (ListView) findViewById(R.id.nav_drawer);
+        navigationView.setAdapter(new DrawerListAdapter(BackUpActivity.this));
+        navigationView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                drawer.closeDrawer(GravityCompat.START);
+                if (position == 0) {
+                    Intent sender = new Intent(BackUpActivity.this, InvoiceActivity.class);
+                    startActivity(sender);
+                } else if (position == 1) {
+                    Intent sender = new Intent(BackUpActivity.this, EstimateActivity.class);
+                    startActivity(sender);
+                } else if (position == 2) {
+                    Intent sender = new Intent(BackUpActivity.this, ItemListActivity.class);
+                    startActivity(sender);
+                } else if (position == 3) {
+                    Intent sender = new Intent(BackUpActivity.this, ClientListActivity.class);
+                    startActivity(sender);
+                } else if (position == 4) {
+
+                } else if (position == 5) {
+
+                } else if (position == 6) {
+                    Intent sender = new Intent(BackUpActivity.this, SettngActvity.class);
+                    startActivity(sender);
+                }
+            }
+        });
 
 
     }
@@ -82,47 +113,5 @@ public class BackUpActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-
-        switch (id) {
-
-            case R.id.nav_backup:
-                Intent senderBackup = new Intent(BackUpActivity.this, BackUpActivity.class);
-                startActivity(senderBackup);
-                break;
-            case R.id.nav_view:
-                Intent senderMyItem = new Intent(BackUpActivity.this, MyItemActivity.class);
-                startActivity(senderMyItem);
-                break;
-            case R.id.nav_support:
-               /* Intent senderSupport = new Intent(BackUpActivity.this, SupportActivity.class);
-                startActivity(senderSupport);*/
-                break;
-            case R.id.nav_est:
-                Intent sender = new Intent(BackUpActivity.this, EstimateActvity.class);
-                startActivity(sender);
-                break;
-            case R.id.nav_clients:
-                drawer.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.nav_cam:
-                drawer.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.nav_settings:
-                Intent senderSetting = new Intent(BackUpActivity.this, SettngActvity.class);
-                startActivity(senderSetting);
-                break;
-
-
-        }
-
-        Toast.makeText(BackUpActivity.this, "position :: " + id, Toast.LENGTH_SHORT).show();
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }

@@ -2,9 +2,11 @@ package app.invoice.com.invoiceapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import app.invoice.com.invoiceapp.database.Database;
 import app.invoice.com.invoiceapp.model.ClientModel;
@@ -19,6 +21,8 @@ public class ClientAddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_add);
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("New Client");
         db=new Database(ClientAddActivity.this);
@@ -80,6 +84,7 @@ public class ClientAddActivity extends AppCompatActivity {
         model.setShip_addr2(editShip_Addr2.getText().toString());
         model.setShip_addr3(editShip_Addr3.getText().toString());
         db.saveClient(model);
-
+        Toast.makeText(ClientAddActivity.this,"Client Added Successfully",Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

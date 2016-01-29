@@ -12,14 +12,14 @@
         <activity android:name=".SplashActivityMain" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".InvoiceActivity"
             android:label="@string/title_activity_invoice_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
+             />
         <activity android:name=".ClientListActivity" >
         </activity>
         <activity android:name=".ItemListActivity" >
@@ -27,33 +27,33 @@
         <activity
             android:name=".AddItemActivity"
             android:label="@string/title_activity_add_item"
-            android:theme="@style/AppTheme.NoActionBar" >
+             >
         </activity>
         <activity android:name=".ClientAddActivity" >
         </activity>
         <activity
-            android:name=".EstimateActvity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".EstimateActivity"
+            ></activity>
 
         <activity
             android:name=".BackUpActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            ></activity>
 
         <activity
             android:name=".MyItemActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            ></activity>
 
 
         <activity
             android:name=".SettngActvity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            ></activity>
 
         <!--<activity
             android:name=".SupportActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>-->
         <activity
             android:name=".InvoiceBillActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            ></activity>
     </application>
 
 </manifest>

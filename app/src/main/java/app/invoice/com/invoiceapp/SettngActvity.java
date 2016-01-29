@@ -1,6 +1,7 @@
 package app.invoice.com.invoiceapp;
 
 import android.content.Intent;
+import android.location.SettingInjectorService;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,42 +10,25 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
-public class SettngActvity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-    DrawerLayout drawer;
+import app.invoice.com.invoiceapp.adapter.DrawerListAdapter;
 
+public class SettngActvity extends AppCompatActivity
+         {
+    DrawerLayout drawer;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.support_drawer_view_setting);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getApplicationContext().getResources().getString(R.string.action_settings));
         setSupportActionBar(toolbar);
-//        FragmentInvoiceMain fim = new FragmentInvoiceMain();
-//        FragmentManager fm = getSupportFragmentManager();
-//        fm.beginTransaction().add(R.id.content_invoice_frame, fim).addToBackStack(null).commit();
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-
+        initDrawer();
     }
 
     @Override
@@ -79,47 +63,40 @@ public class SettngActvity extends AppCompatActivity
 //        return super.onOptionsItemSelected(item);
 //    }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+             private void initDrawer()
+             {
+                 drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                 ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                         this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                 drawer.setDrawerListener(toggle);
+                 toggle.syncState();
 
-        switch (id) {
+                 ListView navigationView = (ListView) findViewById(R.id.nav_drawer);
+                 navigationView.setAdapter(new DrawerListAdapter(SettngActvity.this));
+                 navigationView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                     @Override
+                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                         drawer.closeDrawer(GravityCompat.START);
+                         if (position == 0) {
+                             Intent sender = new Intent(SettngActvity.this, InvoiceActivity.class);
+                             startActivity(sender);
+                         } else if (position == 1) {
+                             Intent sender = new Intent(SettngActvity.this, EstimateActivity.class);
+                             startActivity(sender);
+                         } else if (position == 2) {
+                             Intent sender = new Intent(SettngActvity.this, ItemListActivity.class);
+                             startActivity(sender);
+                         } else if (position == 3) {
 
-            case R.id.nav_backup:
-                Intent senderBackup = new Intent(SettngActvity.this, BackUpActivity.class);
-                startActivity(senderBackup);
-                break;
-            case R.id.nav_view:
-                Intent senderMyItem = new Intent(SettngActvity.this, MyItemActivity.class);
-                startActivity(senderMyItem);
-                break;
-            case R.id.nav_support:
-               /* Intent senderSupport = new Intent(SettngActvity.this, SupportActivity.class);
-                startActivity(senderSupport);*/
-                break;
-            case R.id.nav_est:
-                Intent sender = new Intent(SettngActvity.this, EstimateActvity.class);
-                startActivity(sender);
-                break;
-            case R.id.nav_clients:
-                drawer.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.nav_cam:
-                drawer.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.nav_settings:
-                Intent senderSetting = new Intent(SettngActvity.this, EstimateActvity.class);
-                startActivity(senderSetting);
-                break;
+                         } else if (position == 4) {
+                             Intent sender = new Intent(SettngActvity.this, BackUpActivity.class);
+                             startActivity(sender);
+                         } else if (position == 5) {
 
+                         } else if (position == 6) {
 
-        }
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        Toast.makeText(SettngActvity.this, "position :: " + id, Toast.LENGTH_SHORT).show();
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
+                         }
+                     }
+                 });
+             }
 }

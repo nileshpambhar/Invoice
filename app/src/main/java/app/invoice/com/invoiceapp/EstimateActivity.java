@@ -25,7 +25,7 @@ import android.widget.TextView;
 import app.invoice.com.invoiceapp.adapter.DrawerListAdapter;
 import app.invoice.com.invoiceapp.invoice.FragmentInvoiceMain;
 
-public class MyItemActivity extends AppCompatActivity
+public class EstimateActivity extends AppCompatActivity
 {
 
     DrawerLayout drawer;
@@ -37,7 +37,7 @@ public class MyItemActivity extends AppCompatActivity
         setContentView(R.layout.activity_invoice_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle("Estimates");
 
         FragmentInvoiceMain fim = new FragmentInvoiceMain();
         FragmentManager fm = getSupportFragmentManager();
@@ -49,7 +49,7 @@ public class MyItemActivity extends AppCompatActivity
             public void onClick(View view) {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent sender = new Intent(MyItemActivity.this, InvoiceBillActivity.class);
+                Intent sender = new Intent(EstimateActivity.this, InvoiceBillActivity.class);
                 startActivity(sender);
             }
         });
@@ -61,33 +61,33 @@ public class MyItemActivity extends AppCompatActivity
         toggle.syncState();
 
         ListView navigationView = (ListView) findViewById(R.id.nav_drawer);
-        navigationView.setAdapter(new DrawerListAdapter(MyItemActivity.this));
+        navigationView.setAdapter(new DrawerListAdapter(EstimateActivity.this));
         navigationView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 drawer.closeDrawer(GravityCompat.START);
                 if(position==0)
                 {
-                    Intent sender = new Intent(MyItemActivity.this, InvoiceActivity.class);
+
+                    Intent sender = new Intent(EstimateActivity.this, InvoiceActivity.class);
                     startActivity(sender);
                 }
                 else if(position==1)
                 {
-                    Intent sender = new Intent(MyItemActivity.this, EstimateActivity.class);
-                    startActivity(sender);
                 }
                 else if(position==2)
                 {
-
+                    Intent sender = new Intent(EstimateActivity.this, ItemListActivity.class);
+                    startActivity(sender);
                 }
                 else if(position==3)
                 {
-                    Intent sender = new Intent(MyItemActivity.this, ClientListActivity.class);
+                    Intent sender = new Intent(EstimateActivity.this, ClientListActivity.class);
                     startActivity(sender);
                 }
                 else if(position==4)
                 {
-                    Intent sender = new Intent(MyItemActivity.this, BackUpActivity.class);
+                    Intent sender = new Intent(EstimateActivity.this, BackUpActivity.class);
                     startActivity(sender);
                 }
                 else if(position==5)
@@ -96,7 +96,7 @@ public class MyItemActivity extends AppCompatActivity
                 }
                 else if(position==6)
                 {
-                    Intent sender = new Intent(MyItemActivity.this, SettngActvity.class);
+                    Intent sender = new Intent(EstimateActivity.this, SettngActvity.class);
                     startActivity(sender);
                 }
             }

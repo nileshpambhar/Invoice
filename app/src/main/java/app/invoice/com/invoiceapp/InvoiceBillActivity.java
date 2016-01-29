@@ -19,43 +19,27 @@ import app.invoice.com.invoiceapp.fragment.FragmentInvoiceBillMain;
 
 
 public class InvoiceBillActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+         {
 
     DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.support_drawer_view_invoicebill);
+        setContentView(R.layout.support_toobar_invoicebill);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
+        getSupportActionBar().setTitle("New Invoice");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         FragmentInvoiceBillMain fim = new FragmentInvoiceBillMain();
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().add(R.id.invoice_bill_frame, fim).commit();
-
-
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
 
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+
     }
 
     @Override
@@ -76,18 +60,12 @@ public class InvoiceBillActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
-
+        if(id==android.R.id.home)
+        {
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }
