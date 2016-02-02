@@ -70,7 +70,7 @@ public class FragmentInvoiceBillEdit extends Fragment implements View.OnClickLis
                 // Goto_Fragment(Constant.FragmentAddClient);
                 break;
             case R.id.btnBillAddress:
-                Goto_Fragment(Constant.FragmentBillAddress);
+              //  Goto_Fragment(Constant.FragmentBillAddress);
                 break;
             case R.id.btnAddItem:
                 Goto_Fragment(Constant.FragmentAddItem);
