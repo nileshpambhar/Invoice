@@ -1,55 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.invoice.com.invoiceapp" >
+    package="app.invoice.com.invoiceapp">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity android:name=".SplashActivity" />
-        <activity android:name=".SplashActivityMain" >
+        <activity android:name=".SplashActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".InvoiceActivity"
-            android:label="@string/title_activity_invoice_activity_main"
-             />
-        <activity android:name=".ClientListActivity" >
-        </activity>
-        <activity android:name=".ItemListActivity" >
-        </activity>
+            android:label="@string/title_activity_invoice_activity_main" />
+        <activity android:name=".ClientListActivity"></activity>
+        <activity android:name=".ItemListActivity"></activity>
         <activity
             android:name=".AddItemActivity"
-            android:label="@string/title_activity_add_item"
-             >
-        </activity>
-        <activity android:name=".ClientAddActivity" >
-        </activity>
-        <activity
-            android:name=".EstimateActivity"
-            ></activity>
+            android:label="@string/title_activity_add_item"></activity>
+        <activity android:name=".ClientAddActivity"></activity>
+        <activity android:name=".EstimateActivity"></activity>
 
-        <activity
-            android:name=".BackUpActivity"
-            ></activity>
+        <activity android:name=".BackUpActivity"></activity>
 
 
-        <activity
-            android:name=".SettngActvity"
-            ></activity>
+        <activity android:name=".SettngActvity"></activity>
 
         <!--<activity
             android:name=".SupportActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>-->
-        <activity
-            android:name=".InvoiceBillActivity"
-            ></activity>
+        <activity android:name=".InvoiceBillActivity"></activity>
+
+
+        <activity android:name=".InvoiceBillEditActivity"></activity>
     </application>
 
 </manifest>

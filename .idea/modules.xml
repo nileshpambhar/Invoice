@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Invoice.iml" filepath="$PROJECT_DIR$/Invoice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Invoice.iml" filepath="$PROJECT_DIR$/Invoice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicatorLib/ViewPagerIndicatorLib.iml" filepath="$PROJECT_DIR$/ViewPagerIndicatorLib/ViewPagerIndicatorLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicatorLib/ViewPagerIndicatorLib.iml" filepath="$PROJECT_DIR$/ViewPagerIndicatorLib/ViewPagerIndicatorLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
     </modules>
   </component>
