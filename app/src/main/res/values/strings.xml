@@ -186,7 +186,7 @@
     <string name="setting_changelog">Change log</string>
     <string name="setting_buy">Purchase full version</string>
 
-
+    <string name="external_dir">InvoiceApp</string>
     <string name="bill_payment">TAKE PAYMENT</string>
     <string name="bill_reciept">Due on reciept</string>
     <string name="bill_default">INV0001</string>
@@ -203,4 +203,33 @@
     <string name="bill_signature">Signature</string>
     <string name="bill_Notes">Notes</string>
     <string name="bill_addphoto">Add photo</string>
+    <string name="bill_client">Client</string>
+
+
+    <string name="invoice_info_1">Invoice #</string>
+    <string name="invoice_info_2">Date</string>
+    <string name="invoice_info_3">Terms</string>
+    <string name="invoice_info_4">Due</string>
+    <string name="invoice_info_5">PO Number</string>
+
+    <string name="invoice_payment_1">Paypal address</string>
+    <string name="invoice_payment_2">Enter your paypal email address</string>
+    <string name="invoice_payment_3">Make checks payable to</string>
+    <string name="invoice_payment_4">You or your business\'s name </string>
+    <string name="invoice_payment_5">Bank transfer</string>
+    <string name="invoice_payment_6">Enter bank account # and other details here</string>
+    <string name="invoice_payment_7">Other</string>
+    <string name="invoice_payment_8">Additional payment instrruction</string>
+
+    <string name="invoice_shipping_1">Amount</string>
+    <string name="invoice_shipping_2">Ship Date</string>
+    <string name="invoice_shipping_3">Ship Via</string>
+    <string name="invoice_shipping_4">Tracking #</string>
+    <string name="invoice_shipping_5">FOB</string>
+
+    <string name="invoice_additem_1">Description</string>
+    <string name="invoice_additem_2">Unit cost</string>
+    <string name="invoice_additem_3">Quantity</string>
+    <string name="invoice_additem_4">Additional details</string>
+    <string name="invoice_additem_5">Save to My Item for future invoices</string>
 </resources>

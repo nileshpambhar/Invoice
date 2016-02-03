@@ -45,7 +45,7 @@ public class InvoiceActivity extends AppCompatActivity
             public void onClick(View view) {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent sender = new Intent(InvoiceActivity.this, CaptureSignature.class);
+                Intent sender = new Intent(InvoiceActivity.this, InvoiceBillActivity.class);
                 startActivityForResult(sender,SIGNATURE_ACTIVITY);
             }
         });
