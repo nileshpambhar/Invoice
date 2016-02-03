@@ -3,24 +3,19 @@ package app.invoice.com.invoiceapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
+import android.view.View;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import app.invoice.com.invoiceapp.adapter.DrawerListAdapter;
 import app.invoice.com.invoiceapp.invoice.FragmentInvoiceMain;
@@ -29,6 +24,7 @@ public class InvoiceActivity extends AppCompatActivity
 {
 
     DrawerLayout drawer;
+    public static final int SIGNATURE_ACTIVITY = 1;
 
 
     @Override
@@ -49,8 +45,8 @@ public class InvoiceActivity extends AppCompatActivity
             public void onClick(View view) {
                 /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent sender = new Intent(InvoiceActivity.this, InvoiceBillActivity.class);
-                startActivity(sender);
+                Intent sender = new Intent(InvoiceActivity.this, CaptureSignature.class);
+                startActivityForResult(sender,SIGNATURE_ACTIVITY);
             }
         });
 
@@ -137,6 +133,24 @@ public class InvoiceActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        switch(requestCode) {
+            case SIGNATURE_ACTIVITY:
+                if (resultCode == RESULT_OK) {
+
+                    Bundle bundle = data.getExtras();
+                    String status  = bundle.getString("status");
+                    if(status.equalsIgnoreCase("done")){
+                        Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.TOP, 105, 50);
+                        toast.show();
+                    }
+                }
+                break;
+        }
+
+    }
 
 
 }

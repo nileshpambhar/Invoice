@@ -203,4 +203,7 @@
     <string name="bill_signature">Signature</string>
     <string name="bill_Notes">Notes</string>
     <string name="bill_addphoto">Add photo</string>
+
+
+    <string name="external_dir">InvoiceSignature</string>
 </resources>
