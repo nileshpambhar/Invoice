@@ -51,11 +51,12 @@
                 android:textSize="@dimen/text_18"
                 android:textColor="@color/black"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/edtInvDate"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:background="@drawable/bg_text_view_light"/>
 
         </LinearLayout>
 
@@ -76,10 +77,11 @@
                 android:textSize="@dimen/text_18"
                 android:textColor="@color/black"/>
 
-            <EditText
+            <TextView
                     android:id="@+id/edtInvTerms"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/bg_text_view_light"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -100,9 +102,10 @@
                 android:textSize="@dimen/text_18"
                 android:textColor="@color/black"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/edtInvDue"
                 android:layout_width="0dp"
+                android:background="@drawable/bg_text_view_light"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 

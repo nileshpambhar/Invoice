@@ -69,7 +69,7 @@
                     android:weightSum="1">
 
                     <TextView
-
+                        android:id="@+id/txtInvoiceNo"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -84,7 +84,7 @@
 
                     <TextView
 
-
+                        android:id="@+id/txtDateDue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -119,7 +119,7 @@
 
                     <TextView
 
-
+                        android:id="@+id/txtBillDate"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".5"

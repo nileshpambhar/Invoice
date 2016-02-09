@@ -3,12 +3,11 @@ package app.invoice.com.invoiceapp.model;
 /**
  * Created by Angle on 1/20/2016.
  */
-public class ClientModel
-{
+public class ClientModel {
     private int id;
-    private String name,email,mobile,phone,fax;
-    private String contact,line1,line2,line3;
-    private String shipping_name,ship_addr1,ship_addr2,ship_addr3;
+    private String name, email, mobile, phone, fax, website;
+    private String contact, line1, line2, line3;
+    private String shipping_name, ship_addr1, ship_addr2, ship_addr3;
 
     public int getId() {
         return id;
@@ -120,5 +119,13 @@ public class ClientModel
 
     public void setShip_addr3(String ship_addr3) {
         this.ship_addr3 = ship_addr3;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getWebsite() {
+        return website;
     }
 }

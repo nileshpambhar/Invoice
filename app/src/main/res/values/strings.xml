@@ -232,4 +232,78 @@
     <string name="invoice_additem_3">Quantity</string>
     <string name="invoice_additem_4">Additional details</string>
     <string name="invoice_additem_5">Save to My Item for future invoices</string>
+    <string name="noTax">None</string>
+    <string name="itemTax">Per item</string>
+    <string name="totalTax">On the total</string>
+    <string name="taxDeducted">Deducted</string>
+    <string-array name="tax_type">
+        <item>@string/noTax</item>
+        <item>@string/itemTax</item>
+        <item>@string/totalTax</item>
+        <item>@string/taxDeducted</item>
+    </string-array>
+    <string-array name="terms">
+        <item>@string/uv_select_none</item>
+        <item>@string/sameDay</item>
+        <item>@string/days_1</item>
+        <item>@string/days_2</item>
+        <item>@string/days_3</item>
+        <item>@string/days_4</item>
+        <item>@string/days_5</item>
+        <item>@string/days_6</item>
+        <item>@string/days_7</item>
+        <item>@string/days_10</item>
+        <item>@string/days_14</item>
+        <item>@string/days_21</item>
+        <item>@string/days_30</item>
+        <item>@string/days_45</item>
+        <item>@string/days_60</item>
+        <item>@string/days_90</item>
+        <item>@string/days_120</item>
+        <item>@string/days_180</item>
+        <item>@string/days_365</item>
+        <item>@string/terms_custom</item>
+    </string-array>
+    <string-array name="terms_value">
+        <item>-2</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>10</item>
+        <item>14</item>
+        <item>21</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+        <item>180</item>
+        <item>365</item>
+        <item>-1</item>
+    </string-array>
+    <string name="sameDay">Due on receipt</string>
+    <string name="terms_custom">Custom</string>
+    <string name="days_1">Next day</string>
+    <string name="days_10">10 Days</string>
+    <string name="days_120">120 Days</string>
+    <string name="days_14">14 Days</string>
+    <string name="days_180">180 Days</string>
+    <string name="days_2">2 Days</string>
+    <string name="days_21">21 Days</string>
+    <string name="days_3">3 Days</string>
+    <string name="days_30">30 Days</string>
+    <string name="days_365">365 Days</string>
+    <string name="days_4">4 Days</string>
+    <string name="days_45">45 Days</string>
+    <string name="days_5">5 Days</string>
+    <string name="days_6">6 Days</string>
+    <string name="days_60">60 Days</string>
+    <string name="days_7">7 Days</string>
+    <string name="days_90">90 Days</string>
+    <string name="uv_select_none">(none)</string>
 </resources>

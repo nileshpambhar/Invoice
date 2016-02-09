@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import app.invoice.com.invoiceapp.InvoiceBillEditActivity;
 import app.invoice.com.invoiceapp.R;
@@ -37,7 +38,7 @@ public class FragmentInvoiceBillEdit extends Fragment implements View.OnClickLis
         initView();
         return rootView;
     }
-
+    TextView txtInvoiceNo,txtDateDue,txtBillDate;
     private void initView() {
 
         rootView.findViewById(R.id.btnProjectName).setOnClickListener(this);
@@ -52,7 +53,9 @@ public class FragmentInvoiceBillEdit extends Fragment implements View.OnClickLis
         rootView.findViewById(R.id.btnPayment).setOnClickListener(this);
         rootView.findViewById(R.id.btnSignature).setOnClickListener(this);
         editNotes = (EditText) rootView.findViewById(R.id.editNotes);
-
+        txtInvoiceNo=(TextView)rootView.findViewById(R.id.txtInvoiceNo);
+        txtDateDue=(TextView)rootView.findViewById(R.id.txtDateDue);
+        txtBillDate=(TextView)rootView.findViewById(R.id.txtBillDate);
 
     }
 
@@ -103,6 +106,10 @@ public class FragmentInvoiceBillEdit extends Fragment implements View.OnClickLis
 
         Intent sender = new Intent(getActivity(), InvoiceBillEditActivity.class);
         sender.putExtra("Fragment", FragmentName);
+        if(txtInvoiceNo.getText().toString().length()==0)
+            sender.putExtra("isEdit",false);
+        else
+            sender.putExtra("isEdit",true);
         startActivity(sender);
 
     }

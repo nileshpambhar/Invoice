@@ -16,15 +16,38 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import app.invoice.com.invoiceapp.model.ClientModel;
+import app.invoice.com.invoiceapp.model.InvoiceModel;
+import app.invoice.com.invoiceapp.model.InvoiceSetting;
 
 public class Database extends SQLiteOpenHelper {
 
     // All Static variables
 // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 25;
     // Database Name
     private static final String DATABASE_NAME = "invoice.db";
     private static final String DB_PATH_SUFFIX = "/databases/";
+
+    private static String C_BILL_NAME="billingName";
+    private static String C_EMAIL="email";
+    private static String C_BILL_ADDRESSS1="billingAddress1";
+    private static String C_BILL_ADDRESSS2="billingAddress2";
+    private static String C_BILL_ADDRESSS3="billingAddress3";
+    private static String C_CONTACT="contact";
+    private static String C_PHONE="phone";
+    private static String C_MOBILE="mobile";
+    private static String C_FAX="fax";
+    private static String C_WEBSITE="website";
+    private static String C_SHIPPING_NAME="shippingName";
+    private static String C_SHIP_ADDRESS1="shippingAddress1";
+    private static String C_SHIP_ADDRESS2="shippingAddress2";
+    private static String C_SHIP_ADDRESS3="shippingAddress3";
+    private static String C_REMOTE_ID="remoteId";
+    private static String C_UPDATED="updated";
+    private static String C_DELETED="deleted";
+
+    private static String TABLE_CLIENT="client";
+
     static Context ctx;
     public Database(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -91,32 +114,39 @@ public class Database extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 // TODO Auto-generated method stub
 
+
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        super.onDowngrade(db, oldVersion, newVersion);
     }
 
     public void saveClient(ClientModel clientModel)
     {
         SQLiteDatabase db=getWritableDatabase();
         ContentValues cv=new ContentValues();
-        cv.put("name", clientModel.getName());
-        cv.put("email",clientModel.getEmail());
-        cv.put("mobile",clientModel.getMobile());
-        cv.put("phone",clientModel.getPhone());
-        cv.put("fax",clientModel.getFax());
-        cv.put("contact",clientModel.getContact());
-        cv.put("line1",clientModel.getLine1());
-        cv.put("line2",clientModel.getLine2());
-        cv.put("line3",clientModel.getLine3());
-        cv.put("shipping_name",clientModel.getShipping_name());
-        cv.put("ship_addr1",clientModel.getShip_addr1());
-        cv.put("ship_addr2",clientModel.getShip_addr2());
-        cv.put("ship_addr3", clientModel.getShip_addr3());
-        long record_id=db.insert("client", null, cv);
+        cv.put(C_BILL_NAME, clientModel.getName());
+        cv.put(C_EMAIL,clientModel.getEmail());
+        cv.put(C_BILL_ADDRESSS1,clientModel.getLine1());
+        cv.put(C_BILL_ADDRESSS2,clientModel.getLine2());
+        cv.put(C_BILL_ADDRESSS3, clientModel.getLine3());
+        cv.put(C_CONTACT,clientModel.getContact());
+        cv.put(C_PHONE,clientModel.getPhone());
+        cv.put(C_MOBILE,clientModel.getMobile());
+        cv.put(C_FAX,clientModel.getFax());
+        cv.put(C_WEBSITE,clientModel.getWebsite());
+        cv.put(C_SHIPPING_NAME,clientModel.getShipping_name());
+        cv.put(C_SHIP_ADDRESS1,clientModel.getShip_addr1());
+        cv.put(C_SHIP_ADDRESS2,clientModel.getShip_addr2());
+        cv.put(C_SHIP_ADDRESS3, clientModel.getShip_addr3());
+        long record_id=db.insert(TABLE_CLIENT, null, cv);
         Log.d("tag","Client record saved :"+record_id);
     }
 
     public List<ClientModel> getAllClients()
     {
-        String qry="SELECT * FROM client";
+        String qry="SELECT * FROM "+TABLE_CLIENT;
         SQLiteDatabase db=getReadableDatabase();
         Cursor cursor=db.rawQuery(qry, null);
         List<ClientModel> clientList=new ArrayList<>();
@@ -127,22 +157,35 @@ public class Database extends SQLiteOpenHelper {
                 ClientModel model=new ClientModel();
                 model.setId(cursor.getInt(0));
                 model.setName(cursor.getString(1));
+
                 model.setEmail(cursor.getString(2));
-                model.setMobile(cursor.getString(3));
-                model.setPhone(cursor.getString(4));
-                model.setFax(cursor.getString(5));
+                model.setLine1(cursor.getString(3));
+                model.setLine2(cursor.getString(4));
+                model.setLine3(cursor.getString(5));
                 model.setContact(cursor.getString(6));
-                model.setLine1(cursor.getString(7));
-                model.setLine2(cursor.getString(8));
-                model.setLine3(cursor.getString(9));
-                model.setShipping_name(cursor.getString(10));
-                model.setShip_addr1(cursor.getString(11));
-                model.setShip_addr2(cursor.getString(12));
-                model.setShip_addr3(cursor.getString(13));
+                model.setPhone(cursor.getString(7));
+                model.setMobile(cursor.getString(8));
+
+                model.setFax(cursor.getString(9));
+                model.setWebsite(cursor.getString(10));
+
+                model.setShipping_name(cursor.getString(11));
+                model.setShip_addr1(cursor.getString(12));
+                model.setShip_addr2(cursor.getString(13));
+                model.setShip_addr3(cursor.getString(14));
                 clientList.add(model);
             }while (cursor.moveToNext());
         }
         return clientList;
+    }
+
+    private void saveInvoiceInfo(InvoiceModel model1,InvoiceSetting invoiceSetting)
+    {
+        SQLiteDatabase db=getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put("invoiceNo",model1.getInvoiceNo());
+        cv.put("invoiceDate",model1.getDueDate());
+        cv.put("dueDate",model1.getDueDate());
     }
 }
 
